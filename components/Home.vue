@@ -34,7 +34,7 @@
 
 <script>
   import axios from 'axios';
-import Card from './Card.vue';
+  import Card from './Card.vue';
 
   export default {
     components: { Card },
@@ -48,11 +48,9 @@ import Card from './Card.vue';
       try {
         const res = await axios.get('https://lh-real-estates-challenge-api.herokuapp.com/real-estates')
         this.favorites = res.data.data;
-        console.log(res);
         this.favorites.forEach(favorite => {
           favorite.houses = res.data.included.filter(house => favorite.attributes.real_estate_ids.some(houseIncludedId => houseIncludedId == house.id))
         });
-        console.log(this.favorites);
       } catch (error) {
         console.log(error);
       }

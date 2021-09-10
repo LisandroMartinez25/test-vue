@@ -23,9 +23,7 @@
 </template>
 
 <script>
-import accountMenu from './accountMenu.vue'
 export default {
-  components: { accountMenu },
   data() {
     return {
       isOpen: false
